@@ -4,7 +4,6 @@ import { Meteor } from 'meteor/meteor';
 import { Tasks } from '../../api/tasks.js';
  
 import template from './todosList.html';
-
  
 class TodosListCtrl {
   constructor($scope) {
@@ -12,7 +11,7 @@ class TodosListCtrl {
  
     this.subscribe('tasks');
  
-    this.hideCompleted = false;
+    this.hideCompleted = false; 
  
     this.helpers({
       tasks() {

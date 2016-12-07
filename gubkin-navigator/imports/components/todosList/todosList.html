@@ -1,6 +1,8 @@
-<header>
-  <h1>Todo List ( {{$ctrl.incompleteCount}} )</h1>
- 
+<header> 
+  <h1>GUBKINnavigator</h1> <!-- ( {{$ctrl.incompleteCount}} )- счетчик активных событий -->
+
+  <link rel="stylesheet" type="text/css" href="todosList/bootstrap.css" >
+
   <label class="hide-completed">
     <input type="checkbox" ng-model="$ctrl.hideCompleted"/>
     Hide Completed Tasks
@@ -8,47 +10,53 @@
  
   <login-buttons></login-buttons>
  
-    <form class="new-task" ng-submit="$ctrl.addTask($ctrl.table)" ng-show="$ctrl.currentUser" role="form" class="form-inline">
-    <input ng-model="$ctrl.table.title" type="text" name="text" placeholder="Предмет договора" class="form-control"/>
+  <form class="new-task" ng-submit="$ctrl.addTask($ctrl.table)" ng-show="$ctrl.currentUser"  >
+    <input ng-model="$ctrl.table.title" type="text" name="text" placeholder="Предмет договора" id="aa"/>
     <input ng-model="$ctrl.table.price" type="text" name="text" placeholder="Начальная цена с НДС" class="form-control"/>
     <input ng-model="$ctrl.table.deadline" type="text" name="text" placeholder="Дата окончания срока подачи заявки" class="form-control"/>
     <input ng-model="$ctrl.table.method" type="text" name="text" placeholder="Способ закупки" class="form-control"/>
     <input ng-model="$ctrl.table.customer" type="text" name="text" placeholder="Заказчик" class="form-control"/>
     <input ng-model="$ctrl.table.URL" type="text" name="text" placeholder="URL" class="form-control"/>
     <input ng-model="$ctrl.table.entryDate" type="text" name="text" placeholder="Дата внесения в систему" class="form-control"/>
-    <input ng-submit="$ctrl.addTask($ctrl.table)" type="submit" name="submit" class="btn btn-primary active"/>
-    </form>
+    <input ng-submit="$ctrl.addTask($ctrl.table)" type="submit" name="submit" class="btn btn-default"/>
+  </form>
   
 </header>
- 
+
+
 <ul>
+
   <li ng-class="{'checked': task.checked, 'private': task.private}">
     
  
     <input type="checkbox" ng-checked="task.checked" ng-click="$ctrl.setChecked(task)" class="toggle-checked"/>
- 
+    
     <span class="text">
-      <table class="table table-bordered">
-        <tr>
-         <th>Предмет договора</th>
-         <th>Начальная цена с НДС</th>
-         <th>Дата окончания срока подачи заявки</th>
-         <th>Способ закупки</th>
-         <th>Заказчик</th>
-         <th>URL</th>
-         <th>Дата внесения в систему</th>
-        </tr>
-        <tr ng-repeat="task in $ctrl.tasks">
-          <td>{{task.title}}</td>
-          <td>{{task.price}}</td>
-          <td>{{task.deadline}}</td>
-          <td>{{task.method}}</td>
-          <td>{{task.customer}}</td>
-          <td>{{task.URL}}</td>
-          <td>{{task.entryDate}}</td>
-          <td><button class="delete" ng-click="$ctrl.removeTask(task)">&times;</button></td>
-        </tr>
-      </table>
+      <div class="table-responsive"> 
+        <div class="table table-hover">
+        <table class="table table-hover">
+          <tr class="active">
+           <th align="center">Предмет договора</th>
+           <th>Начальная цена с НДС</th>
+           <th align="right">Дата окончания срока подачи заявки</th>
+           <th>Способ закупки</th>
+           <th>Заказчик</th>
+           <th>URL</th>
+           <th>Дата внесения в систему</th>
+          </tr>
+          <tr ng-repeat="task in $ctrl.tasks">
+            <td>{{task.title}}</td>
+            <td>{{task.price}}</td>
+            <td>{{task.deadline}}</td>
+            <td>{{task.method}}</td>
+            <td>{{task.customer}}</td>
+            <td>{{task.URL}}</td>
+            <td>{{task.entryDate}}</td>
+            <td><button class="delete" ng-click="$ctrl.removeTask(task)">&times;</button></td>
+          </tr>
+        </table>
+      </div>
+      </dix>
       <!--<strong>{{task.username}}</strong> - {{task}}-->
     </span>
  
