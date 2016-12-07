@@ -1,6 +1,3 @@
-<head>
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-</head>
 <header>
   <h1>Todo List ( {{$ctrl.incompleteCount}} )</h1>
  
@@ -11,8 +8,7 @@
  
   <login-buttons></login-buttons>
  
-  <form role="form" class="form-inline">
-    <form class="new-task" ng-submit="$ctrl.addTask($ctrl.table)" ng-show="$ctrl.currentUser">
+    <form class="new-task" ng-submit="$ctrl.addTask($ctrl.table)" ng-show="$ctrl.currentUser" role="form" class="form-inline">
     <input ng-model="$ctrl.table.title" type="text" name="text" placeholder="Предмет договора" class="form-control"/>
     <input ng-model="$ctrl.table.price" type="text" name="text" placeholder="Начальная цена с НДС" class="form-control"/>
     <input ng-model="$ctrl.table.deadline" type="text" name="text" placeholder="Дата окончания срока подачи заявки" class="form-control"/>
@@ -20,9 +16,8 @@
     <input ng-model="$ctrl.table.customer" type="text" name="text" placeholder="Заказчик" class="form-control"/>
     <input ng-model="$ctrl.table.URL" type="text" name="text" placeholder="URL" class="form-control"/>
     <input ng-model="$ctrl.table.entryDate" type="text" name="text" placeholder="Дата внесения в систему" class="form-control"/>
-    <input ng-submit="$ctrl.addTask($ctrl.table)" type="submit" name="submit" class="btn btn-primary"/>
+    <input ng-submit="$ctrl.addTask($ctrl.table)" type="submit" name="submit" class="btn btn-primary active"/>
     </form>
-  </form>
   
 </header>
  
